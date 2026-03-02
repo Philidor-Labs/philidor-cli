@@ -200,6 +200,9 @@ philidor risk breakdown ethereum 0x1234...
 # Explain the risk scoring methodology — tiers, vectors, weights
 philidor risk explain
 
+# Explain what a specific score means (tier, meaning, vectors)
+philidor risk explain 7.5
+
 # Vaults with recent critical security incidents
 philidor risk incidents
 ```
@@ -319,8 +322,8 @@ philidor --enable-commands vaults,safest,compare vaults --json
 ### Workflow 1: Find the Best Vault for a User's Needs
 
 ```bash
-# Step 1: Search for matching vaults
-philidor search "stablecoin vault on base" --json
+# Step 1: Find matching vaults using structured filters
+philidor vaults --stablecoin --chain base --sort apr_net:desc --json
 
 # Step 2: Compare the top candidates side-by-side
 philidor compare <vault-id-1> <vault-id-2> <vault-id-3> --json
